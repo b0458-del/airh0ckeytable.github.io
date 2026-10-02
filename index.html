@@ -2,6 +2,7 @@
 <html lang="pt-PT">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,45 +10,74 @@
 
     <style>
 
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background: #070b14;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050810;
             color: white;
+            line-height: 1.6;
         }
 
-        /* ================= HEADER ================= */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
 
         header {
             position: fixed;
             top: 0;
+            left: 0;
+
             width: 100%;
-            padding: 18px 8%;
+
+            padding: 18px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(5, 8, 15, 0.92);
-            backdrop-filter: blur(10px);
+
+            background: rgba(5, 8, 16, 0.92);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(0, 220, 255, 0.2);
+
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
         }
 
         .logo {
-            font-size: 25px;
+            font-size: 23px;
             font-weight: bold;
+
             color: #00d9ff;
+
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
+            color: #ddd;
+            font-size: 15px;
+
             transition: 0.3s;
         }
 
@@ -55,352 +85,745 @@
             color: #00d9ff;
         }
 
-        /* ================= HERO ================= */
+
+        /* =========================
+           HERO
+        ========================== */
 
         .hero {
+
             min-height: 100vh;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            padding: 120px 8% 70px;
+            text-align: center;
+
+            padding: 120px 8% 80px;
 
             background:
                 linear-gradient(
-                    rgba(5, 8, 15, 0.70),
-                    rgba(5, 8, 15, 0.95)
+                    rgba(3, 7, 15, 0.72),
+                    rgba(3, 7, 15, 0.96)
                 ),
-                url("air-hockey.jpg") center/cover;
+                url("imagens/mesa-air-hockey.jpg");
+
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-content {
-            max-width: 900px;
-            text-align: center;
+            max-width: 950px;
         }
 
-        .badge {
+        .tag {
+
             display: inline-block;
-            padding: 10px 20px;
+
+            padding: 9px 20px;
+
             border: 1px solid #00d9ff;
+
             border-radius: 30px;
+
             color: #00d9ff;
-            margin-bottom: 25px;
+
             font-size: 14px;
+
+            margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: 70px;
+
+            font-size: clamp(45px, 8vw, 85px);
+
+            line-height: 1;
+
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
             color: #00d9ff;
+
+            text-shadow:
+                0 0 10px #00d9ff,
+                0 0 30px rgba(0, 217, 255, 0.5);
         }
 
         .hero p {
-            font-size: 20px;
-            line-height: 1.7;
+
+            max-width: 800px;
+
+            margin: auto;
+
             color: #d0d0d0;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
             margin-bottom: 35px;
         }
 
+
+        /* =========================
+           BOTÕES
+        ========================== */
+
         .btn {
+
             display: inline-block;
-            padding: 16px 35px;
-            background: #00d9ff;
-            color: #061018;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
+
+            padding: 14px 28px;
+
             margin: 5px;
+
+            border-radius: 30px;
+
+            background: #00d9ff;
+
+            color: #031018;
+
+            font-weight: bold;
+
+            transition: 0.3s;
         }
 
         .btn:hover {
-            transform: scale(1.08);
-            background: white;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 30px rgba(0, 217, 255, 0.3);
         }
 
         .btn-outline {
+
             background: transparent;
+
             color: white;
+
             border: 1px solid #00d9ff;
         }
 
         .btn-outline:hover {
+
             background: #00d9ff;
-            color: #061018;
+
+            color: #031018;
         }
 
-        /* ================= GERAL ================= */
+
+        /* =========================
+           SEÇÕES
+        ========================== */
 
         section {
             padding: 100px 8%;
         }
 
-        .title {
+        .section-title {
+
             text-align: center;
-            margin-bottom: 60px;
+
+            max-width: 800px;
+
+            margin: 0 auto 60px;
         }
 
-        .title h2 {
-            font-size: 42px;
+        .section-title h2 {
+
             color: #00d9ff;
-            margin-bottom: 15px;
+
+            font-size: 42px;
+
+            margin-bottom: 12px;
         }
 
-        .title p {
+        .section-title p {
             color: #aaa;
-            font-size: 18px;
         }
 
-        /* ================= SOBRE ================= */
+
+        /* =========================
+           SOBRE
+        ========================== */
 
         .about {
-            display: flex;
-            align-items: center;
-            gap: 60px;
+
             max-width: 1200px;
+
             margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
         }
 
-        .about-text {
-            flex: 1;
+        .about-image img {
+
+            width: 100%;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 0 40px rgba(0, 217, 255, 0.15);
         }
 
         .about-text h3 {
+
             font-size: 30px;
+
             margin-bottom: 20px;
         }
 
         .about-text p {
-            color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 15px;
+
+            color: #bbb;
+
+            margin-bottom: 18px;
         }
 
-        .about-image {
-            flex: 1;
-        }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
-        }
-
-        /* ================= CARDS ================= */
+        /* =========================
+           CARDS
+        ========================== */
 
         .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
+
             max-width: 1200px;
+
             margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 22px;
         }
 
         .card {
-            padding: 35px 25px;
-            background: #101724;
-            border: 1px solid #1e3445;
+
+            background: #0d1422;
+
+            border: 1px solid #1d3040;
+
+            padding: 30px 25px;
+
             border-radius: 18px;
+
             text-align: center;
-            transition: 0.4s;
+
+            transition: 0.35s;
         }
 
         .card:hover {
-            transform: translateY(-10px);
+
+            transform: translateY(-8px);
+
             border-color: #00d9ff;
-            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.15);
+
+            box-shadow:
+                0 15px 35px rgba(0, 217, 255, 0.12);
         }
 
-        .icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
+        .card-icon {
 
-        .card h3 {
-            color: #00d9ff;
+            font-size: 45px;
+
             margin-bottom: 15px;
         }
 
+        .card h3 {
+
+            color: #00d9ff;
+
+            margin-bottom: 12px;
+        }
+
         .card p {
-            color: #bbb;
-            line-height: 1.6;
+            color: #aaa;
         }
 
-        /* ================= TECNOLOGIAS ================= */
 
-        .tech {
-            background: #0b101c;
+        /* =========================
+           COMO FUNCIONA
+        ========================== */
+
+        .dark-section {
+            background: #080d18;
         }
 
-        .tech-list {
+        .working {
+
             max-width: 1100px;
+
             margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
 
-        .tech-item {
-            background: #111a2a;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #1d3040;
-        }
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
 
-        .tech-item span {
-            font-size: 40px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .tech-item h3 {
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        .tech-item p {
-            color: #999;
-        }
-
-        /* ================= PROCESSO ================= */
-
-        .steps {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .step {
-            display: flex;
-            align-items: center;
             gap: 25px;
-            background: #101724;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 15px;
+        }
+
+        .work {
+
+            padding: 30px;
+
+            background: #0e1727;
+
+            border-radius: 16px;
+
             border-left: 4px solid #00d9ff;
         }
 
-        .number {
-            min-width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #00d9ff;
-            color: #061018;
+        .work-number {
+
+            width: 45px;
+            height: 45px;
+
             display: flex;
-            align-items: center;
+
             justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+
+            color: #031018;
+
             font-weight: bold;
-            font-size: 20px;
+
+            margin-bottom: 18px;
         }
 
-        .step h3 {
-            margin-bottom: 8px;
+        .work h3 {
+            margin-bottom: 10px;
         }
 
-        .step p {
+        .work p {
             color: #aaa;
         }
 
-        /* ================= ESTATÍSTICAS ================= */
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            max-width: 900px;
+        /* =========================
+           MATERIAIS
+        ========================== */
+
+        .materials {
+
+            max-width: 1200px;
+
             margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 20px;
         }
 
-        .stat {
+        .material {
+
+            background: #0d1422;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #1c2b3c;
+        }
+
+        .material h3 {
+
+            color: #00d9ff;
+
+            margin-bottom: 10px;
+        }
+
+        .material ul {
+
+            list-style: none;
+
+            color: #aaa;
+        }
+
+        .material li {
+
+            padding: 6px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+
+        /* =========================
+           CONSTRUÇÃO
+        ========================== */
+
+        .timeline {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 25px;
+
+            top: 0;
+
+            width: 2px;
+
+            height: 100%;
+
+            background: #00d9ff;
+        }
+
+        .timeline-item {
+
+            position: relative;
+
+            padding-left: 75px;
+
+            margin-bottom: 35px;
+        }
+
+        .timeline-dot {
+
+            position: absolute;
+
+            left: 10px;
+
+            top: 0;
+
+            width: 32px;
+
+            height: 32px;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+
+            color: #031018;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+            z-index: 2;
+        }
+
+        .timeline-content {
+
+            background: #0d1422;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #1c2b3c;
+        }
+
+        .timeline-content h3 {
+
+            color: #00d9ff;
+
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #aaa;
+        }
+
+
+        /* =========================
+           ELETRÓNICA
+        ========================== */
+
+        .electronics {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(210px, 1fr));
+
+            gap: 20px;
+        }
+
+        .electronic {
+
             text-align: center;
-            background: #101724;
-            padding: 30px;
+
+            padding: 30px 20px;
+
+            background: #101a2a;
+
             border-radius: 15px;
         }
 
-        .stat h3 {
-            font-size: 40px;
-            color: #00d9ff;
+        .electronic .icon {
+
+            font-size: 45px;
+
+            margin-bottom: 12px;
         }
 
-        .stat p {
-            color: #aaa;
+        .electronic h3 {
+            color: white;
+        }
+
+        .electronic p {
+
+            color: #999;
+
             margin-top: 8px;
         }
 
-        /* ================= OBJETIVOS ================= */
+
+        /* =========================
+           PONTUAÇÃO
+        ========================== */
+
+        .scoreboard {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            background: #080d18;
+
+            border-radius: 25px;
+
+            border: 1px solid #1d3445;
+
+            text-align: center;
+
+            box-shadow:
+                0 0 50px rgba(0,217,255,0.08);
+        }
+
+        .score-title {
+
+            color: #00d9ff;
+
+            font-size: 20px;
+
+            margin-bottom: 25px;
+        }
+
+        .scores {
+
+            display: flex;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .player {
+
+            flex: 1;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            background: #101827;
+        }
+
+        .player h3 {
+            margin-bottom: 10px;
+        }
+
+        .score {
+
+            font-size: 55px;
+
+            font-weight: bold;
+
+            color: #00d9ff;
+        }
+
+        .vs {
+
+            font-size: 22px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           OBJETIVOS
+        ========================== */
 
         .objectives {
+
             max-width: 900px;
+
             margin: auto;
         }
 
         .objective {
-            padding: 18px;
-            margin: 12px 0;
-            background: #101724;
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: center;
+
+            background: #0d1422;
+
+            padding: 17px 20px;
+
             border-radius: 10px;
-            color: #ddd;
+
+            margin-bottom: 12px;
+
+            color: #ccc;
         }
 
-        .objective span {
+        .check {
+
             color: #00d9ff;
-            margin-right: 10px;
+
+            font-size: 20px;
         }
 
-        /* ================= CTA ================= */
 
-        .cta {
+        /* =========================
+           GALERIA
+        ========================== */
+
+        .gallery {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+        }
+
+        .gallery img {
+
+            width: 100%;
+
+            height: 230px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            transition: 0.35s;
+        }
+
+        .gallery img:hover {
+
+            transform: scale(1.03);
+
+            box-shadow:
+                0 0 25px rgba(0,217,255,0.25);
+        }
+
+
+        /* =========================
+           CONCLUSÃO
+        ========================== */
+
+        .conclusion {
+
             text-align: center;
+
             background:
                 linear-gradient(
-                    rgba(0, 217, 255, 0.08),
-                    rgba(0, 217, 255, 0.02)
+                    rgba(0,217,255,0.07),
+                    rgba(0,217,255,0.01)
                 );
         }
 
-        .cta h2 {
-            font-size: 40px;
+        .conclusion h2 {
+
+            font-size: 42px;
+
             margin-bottom: 20px;
         }
 
-        .cta p {
+        .conclusion p {
+
+            max-width: 750px;
+
+            margin: 0 auto 30px;
+
             color: #aaa;
-            max-width: 700px;
-            margin: auto auto 30px;
-            line-height: 1.7;
         }
 
-        /* ================= FOOTER ================= */
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
+
             text-align: center;
-            padding: 30px;
-            background: #04060b;
+
+            padding: 35px 20px;
+
+            background: #03050a;
+
             color: #777;
         }
 
-        footer span {
+        footer strong {
             color: #00d9ff;
         }
 
-        /* ================= RESPONSIVO ================= */
+
+        /* =========================
+           RESPONSIVO
+        ========================== */
 
         @media(max-width: 800px) {
 
-            .hero h1 {
-                font-size: 45px;
-            }
-
-            .about {
-                flex-direction: column;
+            header {
+                padding: 16px 5%;
             }
 
             nav {
@@ -408,7 +831,19 @@
             }
 
             section {
-                padding: 70px 6%;
+                padding: 75px 6%;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .scores {
+                flex-direction: column;
+            }
+
+            .player {
+                width: 100%;
             }
 
         }
@@ -421,7 +856,9 @@
 <body>
 
 
-<!-- ================= MENU ================= -->
+<!-- =====================================================
+     MENU
+====================================================== -->
 
 <header>
 
@@ -430,24 +867,35 @@
     </div>
 
     <nav>
+
         <a href="#inicio">Início</a>
+
         <a href="#projeto">Projeto</a>
-        <a href="#tecnologia">Tecnologia</a>
-        <a href="#funcionamento">Funcionamento</a>
+
+        <a href="#materiais">Materiais</a>
+
+        <a href="#construcao">Construção</a>
+
+        <a href="#eletronica">Eletrónica</a>
+
         <a href="#objetivos">Objetivos</a>
+
     </nav>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+====================================================== -->
 
 <section class="hero" id="inicio">
 
     <div class="hero-content">
 
-        <div class="badge">
-            ⚡ PROJETO DE ELETRÓNICA E AUTOMAÇÃO
+        <div class="tag">
+            ⚡ PROJETO TEAC • ELETRÓNICA • AUTOMAÇÃO
         </div>
 
         <h1>
@@ -455,17 +903,19 @@
         </h1>
 
         <p>
-            Uma mesa de Air Hockey desenvolvida através da combinação
-            de eletrónica, programação e automação, criando uma
-            experiência interativa, moderna e divertida.
+
+            Desenvolvimento de uma mesa de Air Hockey de baixo custo,
+            combinando construção mecânica, eletrónica, programação,
+            iluminação e automação.
+
         </p>
 
         <a href="#projeto" class="btn">
             🚀 Explorar Projeto
         </a>
 
-        <a href="#tecnologia" class="btn btn-outline">
-            ⚙️ Tecnologias
+        <a href="#construcao" class="btn btn-outline">
+            🔧 Ver Construção
         </a>
 
     </div>
@@ -473,16 +923,19 @@
 </section>
 
 
-<!-- ================= SOBRE ================= -->
+
+<!-- =====================================================
+     INTRODUÇÃO
+====================================================== -->
 
 <section id="projeto">
 
-    <div class="title">
+    <div class="section-title">
 
-        <h2>🎯 Sobre o Projeto</h2>
+        <h2>🏒 Sobre o Projeto</h2>
 
         <p>
-            Conhece a ideia por detrás da nossa mesa de Air Hockey.
+            Uma combinação entre tecnologia, criatividade e diversão.
         </p>
 
     </div>
@@ -490,34 +943,46 @@
 
     <div class="about">
 
-        <div class="about-text">
+        <div class="about-image">
 
-            <h3>🏒 O que é o Air Hockey?</h3>
-
-            <p>
-                O Air Hockey é um jogo competitivo normalmente
-                praticado numa mesa equipada com pequenos orifícios
-                que produzem uma camada de ar.
-            </p>
-
-            <p>
-                Essa camada de ar permite que o disco deslize
-                facilmente sobre a superfície da mesa, tornando
-                o jogo rápido e dinâmico.
-            </p>
-
-            <p>
-                Neste projeto pretendemos juntar o conceito
-                tradicional do Air Hockey com tecnologias de
-                eletrónica, sensores e programação.
-            </p>
+            <img
+                src="imagens/mesa-air-hockey.jpg"
+                alt="Mesa de Air Hockey"
+            >
 
         </div>
 
 
-        <div class="about-image">
+        <div class="about-text">
 
-            <img src="air-hockey.jpg" alt="Mesa de Air Hockey">
+            <h3>
+                💡 O que é este projeto?
+            </h3>
+
+            <p>
+
+                O projeto consiste na construção de uma mesa de
+                Air Hockey de dimensões reduzidas, utilizando
+                materiais relativamente simples e tecnologias
+                de fabricação digital.
+
+            </p>
+
+            <p>
+
+                A ideia é criar uma superfície de jogo onde um
+                disco possa deslizar sobre uma fina camada de ar,
+                reduzindo o atrito entre o disco e a superfície.
+
+            </p>
+
+            <p>
+
+                Para além da parte mecânica, o projeto integra
+                eletrónica e programação através de um sistema
+                de pontuação, iluminação RGB e microcontrolador.
+
+            </p>
 
         </div>
 
@@ -526,16 +991,19 @@
 </section>
 
 
-<!-- ================= CARACTERÍSTICAS ================= -->
 
-<section class="tech">
+<!-- =====================================================
+     COMO FUNCIONA
+====================================================== -->
 
-    <div class="title">
+<section class="dark-section">
 
-        <h2>✨ Características</h2>
+    <div class="section-title">
+
+        <h2>💨 Como funciona?</h2>
 
         <p>
-            Algumas das funcionalidades que podem fazer parte do projeto.
+            O princípio fundamental por trás da mesa.
         </p>
 
     </div>
@@ -543,15 +1011,22 @@
 
     <div class="cards">
 
+
         <div class="card">
 
-            <div class="icon">💡</div>
+            <div class="card-icon">
+                💨
+            </div>
 
-            <h3>Iluminação LED</h3>
+            <h3>
+                Fluxo de Ar
+            </h3>
 
             <p>
-                Utilização de LEDs para criar efeitos luminosos
-                durante o jogo.
+
+                Um soprador envia ar para o interior da mesa,
+                criando pressão por baixo da superfície.
+
             </p>
 
         </div>
@@ -559,13 +1034,19 @@
 
         <div class="card">
 
-            <div class="icon">🎯</div>
+            <div class="card-icon">
+                🔵
+            </div>
 
-            <h3>Deteção</h3>
+            <h3>
+                Pequenos Orifícios
+            </h3>
 
             <p>
-                Sensores podem ser utilizados para detetar
-                o movimento ou a passagem do disco.
+
+                O ar sai através de vários pequenos furos
+                existentes na superfície de jogo.
+
             </p>
 
         </div>
@@ -573,13 +1054,19 @@
 
         <div class="card">
 
-            <div class="icon">🏆</div>
+            <div class="card-icon">
+                🏒
+            </div>
 
-            <h3>Marcador</h3>
+            <h3>
+                Disco Flutuante
+            </h3>
 
             <p>
-                Sistema eletrónico para apresentar
-                automaticamente a pontuação.
+
+                O fluxo de ar cria uma pequena almofada de ar,
+                permitindo que o disco deslize com pouco atrito.
+
             </p>
 
         </div>
@@ -587,13 +1074,19 @@
 
         <div class="card">
 
-            <div class="icon">🔊</div>
+            <div class="card-icon">
+                ⚡
+            </div>
 
-            <h3>Efeitos Sonoros</h3>
+            <h3>
+                Sistema Eletrónico
+            </h3>
 
             <p>
-                Sons podem ser adicionados para tornar
-                a experiência mais interativa.
+
+                O sistema eletrónico permite controlar a
+                pontuação e adicionar efeitos de iluminação.
+
             </p>
 
         </div>
@@ -603,97 +1096,141 @@
 </section>
 
 
-<!-- ================= TECNOLOGIA ================= -->
 
-<section id="tecnologia">
+<!-- =====================================================
+     MATERIAIS
+====================================================== -->
 
-    <div class="title">
+<section id="materiais">
 
-        <h2>⚙️ Tecnologia</h2>
+    <div class="section-title">
+
+        <h2>🧰 Materiais e Componentes</h2>
 
         <p>
-            Componentes e conhecimentos utilizados no desenvolvimento.
+            Principais elementos utilizados como referência para a construção.
         </p>
 
     </div>
 
 
-    <div class="tech-list">
-
-        <div class="tech-item">
-
-            <span>🔌</span>
-
-            <h3>Eletrónica</h3>
-
-            <p>
-                Circuitos e componentes eletrónicos.
-            </p>
-
-        </div>
+    <div class="materials">
 
 
-        <div class="tech-item">
+        <div class="material">
 
-            <span>🧠</span>
+            <h3>🪵 Estrutura</h3>
 
-            <h3>Microcontrolador</h3>
+            <ul>
 
-            <p>
-                Controlo dos vários elementos do sistema.
-            </p>
+                <li>✔ Madeira de pinho</li>
+
+                <li>✔ Contraplacado</li>
+
+                <li>✔ Parafusos</li>
+
+                <li>✔ Cola para madeira</li>
+
+                <li>✔ Suportes</li>
+
+            </ul>
 
         </div>
 
 
-        <div class="tech-item">
+        <div class="material">
 
-            <span>📡</span>
+            <h3>🪟 Superfície</h3>
 
-            <h3>Sensores</h3>
+            <ul>
 
-            <p>
-                Deteção de movimentos e acontecimentos.
-            </p>
+                <li>✔ Acrílico</li>
 
-        </div>
+                <li>✔ Orifícios para o ar</li>
 
+                <li>✔ Painéis de proteção</li>
 
-        <div class="tech-item">
+                <li>✔ Peças de acabamento</li>
 
-            <span>💻</span>
-
-            <h3>Programação</h3>
-
-            <p>
-                Desenvolvimento do software de controlo.
-            </p>
+            </ul>
 
         </div>
 
 
-        <div class="tech-item">
+        <div class="material">
 
-            <span>⚡</span>
+            <h3>💻 Eletrónica</h3>
 
-            <h3>Alimentação</h3>
+            <ul>
 
-            <p>
-                Distribuição de energia pelos componentes.
-            </p>
+                <li>✔ Arduino Uno</li>
+
+                <li>✔ LCD</li>
+
+                <li>✔ Botões</li>
+
+                <li>✔ Jumpers</li>
+
+                <li>✔ Alimentação 12 V</li>
+
+            </ul>
 
         </div>
 
 
-        <div class="tech-item">
+        <div class="material">
 
-            <span>🔧</span>
+            <h3>💡 Iluminação</h3>
 
-            <h3>Montagem</h3>
+            <ul>
 
-            <p>
-                Construção e integração do sistema.
-            </p>
+                <li>✔ Fita LED RGB</li>
+
+                <li>✔ Cabos</li>
+
+                <li>✔ Controlador</li>
+
+                <li>✔ Suportes LED</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="material">
+
+            <h3>🖨️ Fabricação</h3>
+
+            <ul>
+
+                <li>✔ Impressão 3D</li>
+
+                <li>✔ Filamento PLA</li>
+
+                <li>✔ Corte a laser</li>
+
+                <li>✔ Modelação 3D</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="material">
+
+            <h3>💨 Sistema de Ar</h3>
+
+            <ul>
+
+                <li>✔ Soprador</li>
+
+                <li>✔ Tubo PVC</li>
+
+                <li>✔ Adaptadores</li>
+
+                <li>✔ Entrada de ar</li>
+
+            </ul>
 
         </div>
 
@@ -702,35 +1239,46 @@
 </section>
 
 
-<!-- ================= FUNCIONAMENTO ================= -->
 
-<section id="funcionamento">
+<!-- =====================================================
+     CONSTRUÇÃO
+====================================================== -->
 
-    <div class="title">
+<section class="dark-section" id="construcao">
 
-        <h2>🔄 Como funciona?</h2>
+    <div class="section-title">
+
+        <h2>🔧 Construção da Mesa</h2>
 
         <p>
-            Etapas principais do funcionamento do projeto.
+            Principais fases de desenvolvimento do projeto.
         </p>
 
     </div>
 
 
-    <div class="steps">
+    <div class="timeline">
 
 
-        <div class="step">
+        <div class="timeline-item">
 
-            <div class="number">1</div>
+            <div class="timeline-dot">
+                1
+            </div>
 
-            <div>
+            <div class="timeline-content">
 
-                <h3>🎮 Início do jogo</h3>
+                <h3>
+                    📐 Planeamento e desenho
+                </h3>
 
                 <p>
-                    O sistema é ligado e todos os componentes
-                    são inicializados.
+
+                    Primeiro é necessário definir as dimensões
+                    da mesa e realizar o desenho da estrutura.
+                    A modelação 3D pode ser utilizada para
+                    visualizar o projeto antes da construção.
+
                 </p>
 
             </div>
@@ -738,17 +1286,24 @@
         </div>
 
 
-        <div class="step">
+        <div class="timeline-item">
 
-            <div class="number">2</div>
+            <div class="timeline-dot">
+                2
+            </div>
 
-            <div>
+            <div class="timeline-content">
 
-                <h3>📡 Deteção</h3>
+                <h3>
+                    🪵 Construção da estrutura
+                </h3>
 
                 <p>
-                    Os sensores detetam eventos relacionados
-                    com o disco e o jogo.
+
+                    A estrutura é construída com peças de madeira,
+                    formando a moldura que irá suportar a superfície
+                    de jogo.
+
                 </p>
 
             </div>
@@ -756,17 +1311,24 @@
         </div>
 
 
-        <div class="step">
+        <div class="timeline-item">
 
-            <div class="number">3</div>
+            <div class="timeline-dot">
+                3
+            </div>
 
-            <div>
+            <div class="timeline-content">
 
-                <h3>🧠 Processamento</h3>
+                <h3>
+                    🪟 Instalação da superfície
+                </h3>
 
                 <p>
-                    O microcontrolador recebe e processa
-                    os dados dos sensores.
+
+                    A superfície de jogo é instalada e nivelada.
+                    É importante reduzir possíveis fugas de ar
+                    para que o sistema funcione corretamente.
+
                 </p>
 
             </div>
@@ -774,17 +1336,24 @@
         </div>
 
 
-        <div class="step">
+        <div class="timeline-item">
 
-            <div class="number">4</div>
+            <div class="timeline-dot">
+                4
+            </div>
 
-            <div>
+            <div class="timeline-content">
 
-                <h3>🏆 Atualização da pontuação</h3>
+                <h3>
+                    💨 Sistema de ar
+                </h3>
 
                 <p>
-                    Quando é detetado um golo, o sistema
-                    atualiza o marcador.
+
+                    É criada uma entrada de ar na estrutura,
+                    permitindo ligar o soprador à parte inferior
+                    da mesa.
+
                 </p>
 
             </div>
@@ -792,17 +1361,73 @@
         </div>
 
 
-        <div class="step">
+        <div class="timeline-item">
 
-            <div class="number">5</div>
+            <div class="timeline-dot">
+                5
+            </div>
 
-            <div>
+            <div class="timeline-content">
 
-                <h3>💡 Feedback</h3>
+                <h3>
+                    💡 Iluminação
+                </h3>
 
                 <p>
-                    LEDs e outros elementos podem indicar
-                    visualmente o resultado da jogada.
+
+                    São instaladas fitas LED RGB nas laterais,
+                    permitindo criar diferentes efeitos luminosos.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot">
+                6
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    🏆 Sistema de pontuação
+                </h3>
+
+                <p>
+
+                    O Arduino é ligado ao LCD e aos botões,
+                    permitindo controlar e apresentar a
+                    pontuação dos jogadores.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot">
+                7
+            </div>
+
+            <div class="timeline-content">
+
+                <h3>
+                    🏒 Testes finais
+                </h3>
+
+                <p>
+
+                    Depois da montagem, são realizados testes
+                    ao fluxo de ar, iluminação e sistema
+                    eletrónico.
+
                 </p>
 
             </div>
@@ -814,51 +1439,125 @@
 </section>
 
 
-<!-- ================= ESTATÍSTICAS ================= -->
 
-<section class="tech">
+<!-- =====================================================
+     ELETRÓNICA
+====================================================== -->
 
-    <div class="title">
+<section id="eletronica">
 
-        <h2>📊 O Projeto em Números</h2>
+    <div class="section-title">
+
+        <h2>⚡ Sistema Eletrónico</h2>
+
+        <p>
+            A eletrónica acrescenta funcionalidades à mesa.
+        </p>
 
     </div>
 
 
-    <div class="stats">
-
-        <div class="stat">
-
-            <h3>⚡</h3>
-
-            <p>Eletrónica</p>
-
-        </div>
+    <div class="electronics">
 
 
-        <div class="stat">
+        <div class="electronic">
 
-            <h3>💻</h3>
+            <div class="icon">
+                🧠
+            </div>
 
-            <p>Programação</p>
+            <h3>
+                Arduino Uno
+            </h3>
 
-        </div>
-
-
-        <div class="stat">
-
-            <h3>📡</h3>
-
-            <p>Sensores</p>
+            <p>
+                Responsável pelo controlo do sistema de pontuação.
+            </p>
 
         </div>
 
 
-        <div class="stat">
+        <div class="electronic">
 
-            <h3>🏒</h3>
+            <div class="icon">
+                📺
+            </div>
 
-            <p>Air Hockey</p>
+            <h3>
+                LCD
+            </h3>
+
+            <p>
+                Apresenta a pontuação dos jogadores.
+            </p>
+
+        </div>
+
+
+        <div class="electronic">
+
+            <div class="icon">
+                🔘
+            </div>
+
+            <h3>
+                Botões
+            </h3>
+
+            <p>
+                Permitem atualizar a pontuação.
+            </p>
+
+        </div>
+
+
+        <div class="electronic">
+
+            <div class="icon">
+                🌈
+            </div>
+
+            <h3>
+                LED RGB
+            </h3>
+
+            <p>
+                Cria iluminação e efeitos visuais.
+            </p>
+
+        </div>
+
+
+        <div class="electronic">
+
+            <div class="icon">
+                🔌
+            </div>
+
+            <h3>
+                Alimentação
+            </h3>
+
+            <p>
+                Fornece energia aos sistemas eletrónicos.
+            </p>
+
+        </div>
+
+
+        <div class="electronic">
+
+            <div class="icon">
+                💨
+            </div>
+
+            <h3>
+                Soprador
+            </h3>
+
+            <p>
+                Produz o fluxo de ar necessário para o jogo.
+            </p>
 
         </div>
 
@@ -867,16 +1566,108 @@
 </section>
 
 
-<!-- ================= OBJETIVOS ================= -->
+
+<!-- =====================================================
+     MARCADOR
+====================================================== -->
+
+<section class="dark-section">
+
+    <div class="section-title">
+
+        <h2>🏆 Sistema de Pontuação</h2>
+
+        <p>
+            Exemplo visual do marcador eletrónico.
+        </p>
+
+    </div>
+
+
+    <div class="scoreboard">
+
+        <div class="score-title">
+            🏒 AIR HOCKEY
+        </div>
+
+
+        <div class="scores">
+
+
+            <div class="player">
+
+                <h3>
+                    🔵 JOGADOR 1
+                </h3>
+
+                <div class="score" id="score1">
+                    0
+                </div>
+
+                <button
+                    class="btn"
+                    onclick="addPoint(1)"
+                >
+                    + Ponto
+                </button>
+
+            </div>
+
+
+            <div class="vs">
+                VS
+            </div>
+
+
+            <div class="player">
+
+                <h3>
+                    🟠 JOGADOR 2
+                </h3>
+
+                <div class="score" id="score2">
+                    0
+                </div>
+
+                <button
+                    class="btn"
+                    onclick="addPoint(2)"
+                >
+                    + Ponto
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <br>
+
+        <button
+            class="btn btn-outline"
+            onclick="resetScore()"
+        >
+            🔄 Reiniciar
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OBJETIVOS
+====================================================== -->
 
 <section id="objetivos">
 
-    <div class="title">
+    <div class="section-title">
 
-        <h2>🎯 Objetivos do Projeto</h2>
+        <h2>🎯 Objetivos</h2>
 
         <p>
-            O que pretendemos alcançar com este projeto.
+            Competências e resultados pretendidos.
         </p>
 
     </div>
@@ -884,39 +1675,76 @@
 
     <div class="objectives">
 
-        <div class="objective">
-            <span>✔</span>
-            Desenvolver uma mesa de Air Hockey funcional.
-        </div>
 
         <div class="objective">
-            <span>✔</span>
+
+            <span class="check">✔</span>
+
+            Construir uma mesa de Air Hockey funcional.
+
+        </div>
+
+
+        <div class="objective">
+
+            <span class="check">✔</span>
+
             Aplicar conhecimentos de eletrónica.
+
         </div>
 
-        <div class="objective">
-            <span>✔</span>
-            Utilizar programação para controlar o sistema.
-        </div>
 
         <div class="objective">
-            <span>✔</span>
-            Implementar sensores e sistemas de deteção.
+
+            <span class="check">✔</span>
+
+            Utilizar programação através de Arduino.
+
         </div>
 
-        <div class="objective">
-            <span>✔</span>
-            Criar um marcador eletrónico.
-        </div>
 
         <div class="objective">
-            <span>✔</span>
-            Desenvolver uma experiência interativa.
+
+            <span class="check">✔</span>
+
+            Criar um sistema eletrónico de pontuação.
+
         </div>
 
+
         <div class="objective">
-            <span>✔</span>
-            Aplicar os conhecimentos adquiridos no curso TEAC.
+
+            <span class="check">✔</span>
+
+            Implementar iluminação RGB.
+
+        </div>
+
+
+        <div class="objective">
+
+            <span class="check">✔</span>
+
+            Desenvolver competências de montagem e construção.
+
+        </div>
+
+
+        <div class="objective">
+
+            <span class="check">✔</span>
+
+            Integrar diferentes áreas do curso TEAC.
+
+        </div>
+
+
+        <div class="objective">
+
+            <span class="check">✔</span>
+
+            Criar um projeto funcional, interativo e apelativo.
+
         </div>
 
     </div>
@@ -924,40 +1752,163 @@
 </section>
 
 
-<!-- ================= FINAL ================= -->
 
-<section class="cta">
+<!-- =====================================================
+     GALERIA
+====================================================== -->
 
-    <h2>🚀 Pronto para começar?</h2>
+<section class="dark-section">
+
+    <div class="section-title">
+
+        <h2>📸 Galeria do Projeto</h2>
+
+        <p>
+            Substitui estas imagens pelas fotografias da tua construção.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img
+            src="imagens/construcao.jpg"
+            alt="Construção da mesa"
+        >
+
+        <img
+            src="imagens/estrutura.jpg"
+            alt="Estrutura da mesa"
+        >
+
+        <img
+            src="imagens/eletronica.jpg"
+            alt="Eletrónica do projeto"
+        >
+
+        <img
+            src="imagens/led.jpg"
+            alt="Iluminação LED"
+        >
+
+        <img
+            src="imagens/arduino.jpg"
+            alt="Arduino"
+        >
+
+        <img
+            src="imagens/mesa-final.jpg"
+            alt="Mesa de Air Hockey finalizada"
+        >
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONCLUSÃO
+====================================================== -->
+
+<section class="conclusion">
+
+    <h2>
+        🚀 Do projeto à realidade
+    </h2>
 
     <p>
-        Este projeto pretende demonstrar como a eletrónica,
-        a programação e a automação podem ser combinadas para
-        transformar uma ideia num sistema real e interativo.
+
+        Este projeto demonstra como diferentes áreas,
+        como eletrónica, programação, automação, construção
+        e fabricação digital, podem ser combinadas para
+        transformar uma ideia numa solução funcional.
+
     </p>
 
-    <a href="#inicio" class="btn">
+    <a
+        href="#inicio"
+        class="btn"
+    >
         🏒 Voltar ao início
     </a>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
     <p>
-        🏒 Projeto <span>Air Hockey Table</span> |
-        Curso Técnico de Eletrónica, Automação e Computadores
+
+        🏒 <strong>Air Hockey Table</strong>
+
+        <br>
+
+        Projeto de Técnico de Eletrónica, Automação e Computadores
+
     </p>
 
-    <p style="margin-top:10px;">
-        © 2026 - Projeto Escolar
+    <p style="margin-top: 10px;">
+
+        © 2026 • Projeto PAP
+
     </p>
 
 </footer>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+    let score1 = 0;
+    let score2 = 0;
+
+
+    function addPoint(player) {
+
+        if (player === 1) {
+
+            score1++;
+
+            document.getElementById("score1").innerText = score1;
+
+        }
+
+        if (player === 2) {
+
+            score2++;
+
+            document.getElementById("score2").innerText = score2;
+
+        }
+
+    }
+
+
+    function resetScore() {
+
+        score1 = 0;
+        score2 = 0;
+
+        document.getElementById("score1").innerText = 0;
+        document.getElementById("score2").innerText = 0;
+
+    }
+
+</script>
+
+
 </body>
+
 </html>
+
