@@ -1,39 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Air Hockey Table | Projeto</title>
+    <title>Air Hockey Table | Projeto TEAC</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #080b14;
+            background: #070b14;
             color: white;
         }
+
+        /* ================= HEADER ================= */
 
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 8%;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(8, 11, 20, 0.9);
+            background: rgba(5, 8, 15, 0.92);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: bold;
             color: #00d9ff;
         }
@@ -41,8 +47,7 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 16px;
+            margin-left: 25px;
             transition: 0.3s;
         }
 
@@ -50,27 +55,45 @@
             color: #00d9ff;
         }
 
+        /* ================= HERO ================= */
+
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 8% 60px;
+
+            padding: 120px 8% 70px;
+
             background:
-                linear-gradient(rgba(8, 11, 20, 0.65), rgba(8, 11, 20, 0.95)),
+                linear-gradient(
+                    rgba(5, 8, 15, 0.70),
+                    rgba(5, 8, 15, 0.95)
+                ),
                 url("air-hockey.jpg") center/cover;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             text-align: center;
         }
 
+        .badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #00d9ff;
+            border-radius: 30px;
+            color: #00d9ff;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
         .hero h1 {
-            font-size: 65px;
-            margin-bottom: 20px;
+            font-size: 70px;
             text-transform: uppercase;
             letter-spacing: 3px;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
@@ -80,65 +103,123 @@
         .hero p {
             font-size: 20px;
             line-height: 1.7;
-            color: #d4d4d4;
+            color: #d0d0d0;
             margin-bottom: 35px;
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 16px 35px;
             background: #00d9ff;
             color: #061018;
             text-decoration: none;
             font-weight: bold;
             border-radius: 30px;
             transition: 0.3s;
+            margin: 5px;
         }
 
         .btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
             background: white;
         }
 
-        .section {
-            padding: 80px 8%;
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid #00d9ff;
+        }
+
+        .btn-outline:hover {
+            background: #00d9ff;
+            color: #061018;
+        }
+
+        /* ================= GERAL ================= */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .title {
             text-align: center;
+            margin-bottom: 60px;
         }
 
-        .section h2 {
-            font-size: 38px;
-            margin-bottom: 20px;
+        .title h2 {
+            font-size: 42px;
             color: #00d9ff;
+            margin-bottom: 15px;
         }
 
-        .section p {
-            max-width: 850px;
-            margin: auto;
-            line-height: 1.8;
-            color: #c7c7c7;
+        .title p {
+            color: #aaa;
             font-size: 18px;
         }
 
-        .cards {
-            margin-top: 50px;
+        /* ================= SOBRE ================= */
+
+        .about {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+        }
+
+        /* ================= CARDS ================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 25px;
-            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .card {
-            width: 280px;
-            padding: 30px;
-            background: #111725;
-            border: 1px solid #1d3040;
-            border-radius: 15px;
-            transition: 0.3s;
+            padding: 35px 25px;
+            background: #101724;
+            border: 1px solid #1e3445;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             border-color: #00d9ff;
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.15);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
@@ -147,128 +228,736 @@
         }
 
         .card p {
-            font-size: 15px;
+            color: #bbb;
+            line-height: 1.6;
         }
+
+        /* ================= TECNOLOGIAS ================= */
+
+        .tech {
+            background: #0b101c;
+        }
+
+        .tech-list {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-item {
+            background: #111a2a;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #1d3040;
+        }
+
+        .tech-item span {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .tech-item h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .tech-item p {
+            color: #999;
+        }
+
+        /* ================= PROCESSO ================= */
+
+        .steps {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: #101724;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #00d9ff;
+        }
+
+        .number {
+            min-width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #00d9ff;
+            color: #061018;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #aaa;
+        }
+
+        /* ================= ESTATÍSTICAS ================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .stat {
+            text-align: center;
+            background: #101724;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .stat h3 {
+            font-size: 40px;
+            color: #00d9ff;
+        }
+
+        .stat p {
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        /* ================= OBJETIVOS ================= */
+
+        .objectives {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .objective {
+            padding: 18px;
+            margin: 12px 0;
+            background: #101724;
+            border-radius: 10px;
+            color: #ddd;
+        }
+
+        .objective span {
+            color: #00d9ff;
+            margin-right: 10px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            text-align: center;
+            background:
+                linear-gradient(
+                    rgba(0, 217, 255, 0.08),
+                    rgba(0, 217, 255, 0.02)
+                );
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #aaa;
+            max-width: 700px;
+            margin: auto auto 30px;
+            line-height: 1.7;
+        }
+
+        /* ================= FOOTER ================= */
 
         footer {
-            padding: 25px;
             text-align: center;
-            background: #05070d;
-            color: #888;
+            padding: 30px;
+            background: #04060b;
+            color: #777;
         }
 
-        @media (max-width: 700px) {
+        footer span {
+            color: #00d9ff;
+        }
+
+        /* ================= RESPONSIVO ================= */
+
+        @media(max-width: 800px) {
+
             .hero h1 {
-                font-size: 42px;
+                font-size: 45px;
+            }
+
+            .about {
+                flex-direction: column;
             }
 
             nav {
                 display: none;
             }
+
+            section {
+                padding: 70px 6%;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <header>
-        <div class="logo">AIR HOCKEY</div>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#projeto">Projeto</a>
-            <a href="#objetivo">Objetivo</a>
-        </nav>
-    </header>
+<!-- ================= MENU ================= -->
+
+<header>
+
+    <div class="logo">
+        🏒 AIR HOCKEY
+    </div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#projeto">Projeto</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#funcionamento">Funcionamento</a>
+        <a href="#objetivos">Objetivos</a>
+    </nav>
+
+</header>
 
 
-    <!-- INTRODUÇÃO -->
-    <section class="hero" id="inicio">
+<!-- ================= HERO ================= -->
 
-        <div class="hero-content">
+<section class="hero" id="inicio">
 
-            <h1>Mesa de <span>Air Hockey</span></h1>
+    <div class="hero-content">
+
+        <div class="badge">
+            ⚡ PROJETO DE ELETRÓNICA E AUTOMAÇÃO
+        </div>
+
+        <h1>
+            AIR <span>HOCKEY</span>
+        </h1>
+
+        <p>
+            Uma mesa de Air Hockey desenvolvida através da combinação
+            de eletrónica, programação e automação, criando uma
+            experiência interativa, moderna e divertida.
+        </p>
+
+        <a href="#projeto" class="btn">
+            🚀 Explorar Projeto
+        </a>
+
+        <a href="#tecnologia" class="btn btn-outline">
+            ⚙️ Tecnologias
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SOBRE ================= -->
+
+<section id="projeto">
+
+    <div class="title">
+
+        <h2>🎯 Sobre o Projeto</h2>
+
+        <p>
+            Conhece a ideia por detrás da nossa mesa de Air Hockey.
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        <div class="about-text">
+
+            <h3>🏒 O que é o Air Hockey?</h3>
 
             <p>
-                Um projeto tecnológico que combina eletrónica,
-                programação e automação para criar uma experiência
-                de Air Hockey interativa e divertida.
+                O Air Hockey é um jogo competitivo normalmente
+                praticado numa mesa equipada com pequenos orifícios
+                que produzem uma camada de ar.
             </p>
 
-            <a href="#projeto" class="btn">
-                Conhecer o Projeto
-            </a>
+            <p>
+                Essa camada de ar permite que o disco deslize
+                facilmente sobre a superfície da mesa, tornando
+                o jogo rápido e dinâmico.
+            </p>
+
+            <p>
+                Neste projeto pretendemos juntar o conceito
+                tradicional do Air Hockey com tecnologias de
+                eletrónica, sensores e programação.
+            </p>
 
         </div>
 
-    </section>
+
+        <div class="about-image">
+
+            <img src="air-hockey.jpg" alt="Mesa de Air Hockey">
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- SOBRE O PROJETO -->
-    <section class="section" id="projeto">
+<!-- ================= CARACTERÍSTICAS ================= -->
 
-        <h2>Sobre o Projeto</h2>
+<section class="tech">
+
+    <div class="title">
+
+        <h2>✨ Características</h2>
 
         <p>
-            Este projeto consiste no desenvolvimento de uma mesa de
-            Air Hockey, utilizando diferentes componentes eletrónicos
-            e sistemas de controlo. O objetivo é criar uma mesa
-            funcional capaz de detetar e acompanhar a interação
-            dos jogadores durante uma partida.
+            Algumas das funcionalidades que podem fazer parte do projeto.
         </p>
 
-        <div class="cards">
+    </div>
 
-            <div class="card">
-                <h3>Eletrónica</h3>
-                <p>
-                    Utilização de sensores, LEDs, motores e outros
-                    componentes eletrónicos para o funcionamento da mesa.
-                </p>
-            </div>
 
-            <div class="card">
-                <h3>Programação</h3>
-                <p>
-                    Desenvolvimento do código responsável pelo controlo
-                    e funcionamento dos diferentes componentes.
-                </p>
-            </div>
+    <div class="cards">
 
-            <div class="card">
-                <h3>Automação</h3>
+        <div class="card">
+
+            <div class="icon">💡</div>
+
+            <h3>Iluminação LED</h3>
+
+            <p>
+                Utilização de LEDs para criar efeitos luminosos
+                durante o jogo.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🎯</div>
+
+            <h3>Deteção</h3>
+
+            <p>
+                Sensores podem ser utilizados para detetar
+                o movimento ou a passagem do disco.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🏆</div>
+
+            <h3>Marcador</h3>
+
+            <p>
+                Sistema eletrónico para apresentar
+                automaticamente a pontuação.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🔊</div>
+
+            <h3>Efeitos Sonoros</h3>
+
+            <p>
+                Sons podem ser adicionados para tornar
+                a experiência mais interativa.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TECNOLOGIA ================= -->
+
+<section id="tecnologia">
+
+    <div class="title">
+
+        <h2>⚙️ Tecnologia</h2>
+
+        <p>
+            Componentes e conhecimentos utilizados no desenvolvimento.
+        </p>
+
+    </div>
+
+
+    <div class="tech-list">
+
+        <div class="tech-item">
+
+            <span>🔌</span>
+
+            <h3>Eletrónica</h3>
+
+            <p>
+                Circuitos e componentes eletrónicos.
+            </p>
+
+        </div>
+
+
+        <div class="tech-item">
+
+            <span>🧠</span>
+
+            <h3>Microcontrolador</h3>
+
+            <p>
+                Controlo dos vários elementos do sistema.
+            </p>
+
+        </div>
+
+
+        <div class="tech-item">
+
+            <span>📡</span>
+
+            <h3>Sensores</h3>
+
+            <p>
+                Deteção de movimentos e acontecimentos.
+            </p>
+
+        </div>
+
+
+        <div class="tech-item">
+
+            <span>💻</span>
+
+            <h3>Programação</h3>
+
+            <p>
+                Desenvolvimento do software de controlo.
+            </p>
+
+        </div>
+
+
+        <div class="tech-item">
+
+            <span>⚡</span>
+
+            <h3>Alimentação</h3>
+
+            <p>
+                Distribuição de energia pelos componentes.
+            </p>
+
+        </div>
+
+
+        <div class="tech-item">
+
+            <span>🔧</span>
+
+            <h3>Montagem</h3>
+
+            <p>
+                Construção e integração do sistema.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FUNCIONAMENTO ================= -->
+
+<section id="funcionamento">
+
+    <div class="title">
+
+        <h2>🔄 Como funciona?</h2>
+
+        <p>
+            Etapas principais do funcionamento do projeto.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="number">1</div>
+
+            <div>
+
+                <h3>🎮 Início do jogo</h3>
+
                 <p>
-                    Integração dos componentes para criar um sistema
-                    automático, interativo e funcional.
+                    O sistema é ligado e todos os componentes
+                    são inicializados.
                 </p>
+
             </div>
 
         </div>
 
-    </section>
+
+        <div class="step">
+
+            <div class="number">2</div>
+
+            <div>
+
+                <h3>📡 Deteção</h3>
+
+                <p>
+                    Os sensores detetam eventos relacionados
+                    com o disco e o jogo.
+                </p>
+
+            </div>
+
+        </div>
 
 
-    <!-- OBJETIVO -->
-    <section class="section" id="objetivo">
+        <div class="step">
 
-        <h2>Objetivo</h2>
+            <div class="number">3</div>
+
+            <div>
+
+                <h3>🧠 Processamento</h3>
+
+                <p>
+                    O microcontrolador recebe e processa
+                    os dados dos sensores.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">4</div>
+
+            <div>
+
+                <h3>🏆 Atualização da pontuação</h3>
+
+                <p>
+                    Quando é detetado um golo, o sistema
+                    atualiza o marcador.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="number">5</div>
+
+            <div>
+
+                <h3>💡 Feedback</h3>
+
+                <p>
+                    LEDs e outros elementos podem indicar
+                    visualmente o resultado da jogada.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ESTATÍSTICAS ================= -->
+
+<section class="tech">
+
+    <div class="title">
+
+        <h2>📊 O Projeto em Números</h2>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <h3>⚡</h3>
+
+            <p>Eletrónica</p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>💻</h3>
+
+            <p>Programação</p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>📡</h3>
+
+            <p>Sensores</p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>🏒</h3>
+
+            <p>Air Hockey</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OBJETIVOS ================= -->
+
+<section id="objetivos">
+
+    <div class="title">
+
+        <h2>🎯 Objetivos do Projeto</h2>
 
         <p>
-            O principal objetivo é desenvolver uma mesa de Air Hockey
-            que demonstre conhecimentos adquiridos nas áreas de
-            eletrónica, automação e programação, criando um projeto
-            prático, moderno e interativo.
+            O que pretendemos alcançar com este projeto.
         </p>
 
-    </section>
+    </div>
 
 
-    <footer>
-        <p>Projeto de Air Hockey Table © 2026</p>
-    </footer>
+    <div class="objectives">
+
+        <div class="objective">
+            <span>✔</span>
+            Desenvolver uma mesa de Air Hockey funcional.
+        </div>
+
+        <div class="objective">
+            <span>✔</span>
+            Aplicar conhecimentos de eletrónica.
+        </div>
+
+        <div class="objective">
+            <span>✔</span>
+            Utilizar programação para controlar o sistema.
+        </div>
+
+        <div class="objective">
+            <span>✔</span>
+            Implementar sensores e sistemas de deteção.
+        </div>
+
+        <div class="objective">
+            <span>✔</span>
+            Criar um marcador eletrónico.
+        </div>
+
+        <div class="objective">
+            <span>✔</span>
+            Desenvolver uma experiência interativa.
+        </div>
+
+        <div class="objective">
+            <span>✔</span>
+            Aplicar os conhecimentos adquiridos no curso TEAC.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="cta">
+
+    <h2>🚀 Pronto para começar?</h2>
+
+    <p>
+        Este projeto pretende demonstrar como a eletrónica,
+        a programação e a automação podem ser combinadas para
+        transformar uma ideia num sistema real e interativo.
+    </p>
+
+    <a href="#inicio" class="btn">
+        🏒 Voltar ao início
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        🏒 Projeto <span>Air Hockey Table</span> |
+        Curso Técnico de Eletrónica, Automação e Computadores
+    </p>
+
+    <p style="margin-top:10px;">
+        © 2026 - Projeto Escolar
+    </p>
+
+</footer>
+
 
 </body>
 </html>
-
-
-
