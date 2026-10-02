@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Air Hockey Table | Projeto</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #080b14;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 11, 20, 0.9);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d9ff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 8% 60px;
+            background:
+                linear-gradient(rgba(8, 11, 20, 0.65), rgba(8, 11, 20, 0.95)),
+                url("air-hockey.jpg") center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #d4d4d4;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #00d9ff;
+            color: #061018;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        .section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: #00d9ff;
+        }
+
+        .section p {
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.8;
+            color: #c7c7c7;
+            font-size: 18px;
+        }
+
+        .cards {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 280px;
+            padding: 30px;
+            background: #111725;
+            border: 1px solid #1d3040;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+        }
+
+        .card h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 15px;
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            background: #05070d;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">AIR HOCKEY</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#projeto">Projeto</a>
+            <a href="#objetivo">Objetivo</a>
+        </nav>
+    </header>
+
+
+    <!-- INTRODUÇÃO -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>Mesa de <span>Air Hockey</span></h1>
+
+            <p>
+                Um projeto tecnológico que combina eletrónica,
+                programação e automação para criar uma experiência
+                de Air Hockey interativa e divertida.
+            </p>
+
+            <a href="#projeto" class="btn">
+                Conhecer o Projeto
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE O PROJETO -->
+    <section class="section" id="projeto">
+
+        <h2>Sobre o Projeto</h2>
+
+        <p>
+            Este projeto consiste no desenvolvimento de uma mesa de
+            Air Hockey, utilizando diferentes componentes eletrónicos
+            e sistemas de controlo. O objetivo é criar uma mesa
+            funcional capaz de detetar e acompanhar a interação
+            dos jogadores durante uma partida.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Eletrónica</h3>
+                <p>
+                    Utilização de sensores, LEDs, motores e outros
+                    componentes eletrónicos para o funcionamento da mesa.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Programação</h3>
+                <p>
+                    Desenvolvimento do código responsável pelo controlo
+                    e funcionamento dos diferentes componentes.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Automação</h3>
+                <p>
+                    Integração dos componentes para criar um sistema
+                    automático, interativo e funcional.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OBJETIVO -->
+    <section class="section" id="objetivo">
+
+        <h2>Objetivo</h2>
+
+        <p>
+            O principal objetivo é desenvolver uma mesa de Air Hockey
+            que demonstre conhecimentos adquiridos nas áreas de
+            eletrónica, automação e programação, criando um projeto
+            prático, moderno e interativo.
+        </p>
+
+    </section>
+
+
+    <footer>
+        <p>Projeto de Air Hockey Table © 2026</p>
+    </footer>
+
+</body>
+</html>
+
